@@ -1,0 +1,30 @@
+{
+  "name": "new-folder",
+  "version": "1.0.0",
+  "description": "A responsive contact page for GoNex Innovations, featuring a contact form and company information.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pradeepk0606/GoNex-Innovations.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pradeepk0606/GoNex-Innovations/issues"
+  },
+  "homepage": "https://github.com/Pradeepk0606/GoNex-Innovations#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "nodemailer": "^7.0.10"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
