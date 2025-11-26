@@ -1,0 +1,31 @@
+.contact-card {
+  background: linear-gradient(145deg, rgba(23, 27, 43, 0.9), rgba(10, 11, 18, 0.95));
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.contact-card button {
+  width: 100%;
+}
+
+.contact-info {
+  background: rgba(11, 14, 22, 0.9);
+}
+
+.contact-info a {
+  color: #6ad985;
+}
+
+#form-feedback {
+  min-height: 1.4rem;
+}
+
+.contact-panel {
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 640px) {
+  .contact-card button {
+    width: 100%;
+  }
+}
+

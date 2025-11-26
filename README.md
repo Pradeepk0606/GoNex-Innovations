@@ -13,7 +13,7 @@ A responsive contact page for GoNex Innovations, featuring a contact form and co
 - Node.js + Express
 - Nodemailer (SMTP)
 
-## Getting Started
+## Getting Started (Local)
 1. **Install dependencies**
    ```bash
    npm install
@@ -26,11 +26,43 @@ A responsive contact page for GoNex Innovations, featuring a contact form and co
    PORT=5000
    ```
    For Gmail, create an [App Password](https://support.google.com/accounts/answer/185833) and use it for `EMAIL_PASS`.
-3. **Run the server**
+3. **Run the local Express server**
    ```bash
    npm start
    ```
-   The Express server serves `index.html` and exposes `POST /api/contact`, which sends the email via Nodemailer.
+   or run `npm run dev` with nodemon for auto-reloads.
+
+The Express server serves `index.html` and exposes `POST /api/contact`, which sends the email via Nodemailer (shared with the Vercel function).
+
+## Deploying to Vercel
+1. **Install the Vercel CLI (once)**
+   ```bash
+   npm i -g vercel
+   ```
+2. **Link the project & create a deployment**
+   ```bash
+   vercel
+   ```
+   (Follow the prompts to select your scope and project.)
+3. **Add the required environment variables in Vercel**
+   ```bash
+   vercel env add ADMIN_EMAIL
+   vercel env add EMAIL_USER
+   vercel env add EMAIL_PASS
+   ```
+   Use the same values as your `.env`. Redeploy or run `vercel env pull .env` for local parity.
+4. **Deploy to production**
+   ```bash
+   vercel --prod
+   ```
+
+Vercel automatically serves `index.html` as a static page and handles `POST /api/contact` using `api/contact.js` (a serverless function that reuses the same Nodemailer logic).
+
+To test the Vercel setup locally (static site + serverless function) run:
+```bash
+vercel dev
+```
+This will spin up the same runtime that Vercel uses in production.
 
 ## Testing the Contact Form
 - Visit `http://localhost:5000/` and submit the form.
